@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 rigth-0 text-3xl bg-blue-500 w-100 text-center">
-      Nombre del fotografo
+      MOMENTUM
     </div>
   );
 };

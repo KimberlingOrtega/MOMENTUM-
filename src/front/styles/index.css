@@ -1,7 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+* {
+  font-family: "Poiret One", cursive;
+}
+.fondo {
+  background-image: url("https://www.matteozanga.it/wp-content/uploads/2020/04/Matteo-Zanga-Fotografo.jpg.webp");
+}
+.title-1 {
+  background: aqua;
+  width: 60%;
+  font-size: 40px;
+  font-family: "Poiret One", sans-serif;
+}
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
