@@ -20,7 +20,6 @@ export const Home = () => {
                 You can subscribe to our newsletter, and let you know when we
                 are back
               </p>
-
             </div>
           </div>
         </section>
@@ -46,17 +45,27 @@ export const Home = () => {
         <div className="img-photo dos w-1/2 bg-green-300 h-3/5 flex items-center justify-center">
           <p className="title-photo">FHASION</p>
         </div>
-        <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
-          <h3 className="title">Descripcion de corporativo</h3>
-        </div>
-
-        <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
+        <div className="Description-photo photo-2  w-1/2 h-3/5 bg-white-300 py-8">
           <p className="title-1">Commercial Photography</p>
 
           <hr className="line"></hr>
           <p className="title-2">
             La fotografia corporate come valorizzazione dell’azienda, delle
             persone, della filosofia, dei prodotti, dei processi produttivi
+          </p>
+          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            Button
+          </button>
+        </div>
+
+        <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
+          <p className="title-1">FOOD PHOTOGRAPHY</p>
+
+          <hr className="line"></hr>
+          <p className="title-2">
+            Food, beverage, still life… immagini commerciali per ristoranti,
+            aziende alimentari, produttori, blog, editoria del settore
+            alimentare.
           </p>
           <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Button
@@ -70,11 +79,7 @@ export const Home = () => {
           <p className="title-photo">CORPORATE</p>
         </div>
 
-        <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
-          <h3 className="title">Descripcion</h3>
-        </div>
-
-        <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
+        <div className="Description-photo photo-2 w-1/2 h-3/5 bg-white-300 py-8">
           <p className="title-1">Commercial Photography</p>
 
           <hr className="line"></hr>
@@ -86,8 +91,21 @@ export const Home = () => {
             Button
           </button>
         </div>
-        <div className="img-photo 5 w-1/2 bg-green-300 h-3/5 flex items-center justify-center">
-          <p className="title-photo">CORPORATE</p>
+
+        <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
+          <p className="title-1">FOTOGRAFO MATRIMONI</p>
+
+          <hr className="line"></hr>
+          <p className="title-2">
+            Il giorno delle nozze è fatto per essere vissuto, al fotografo di
+            matrimoni spetta il compito di raccontare una storia d’amore.
+          </p>
+          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            Button
+          </button>
+        </div>
+        <div className="img-photo cinco w-1/2 bg-green-300 h-3/5 flex items-center justify-center">
+          <p className="title-photo">WEDDING</p>
         </div>
       </div>
     </>

@@ -41,6 +41,13 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.cinco{
+  background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-matrimoni.jpg.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .title-photo {
   display: flex;
   justify-content: center;
@@ -51,16 +58,16 @@
 
 .title-1 {
   width: 35%;
-  font-size: 40px;
+  font-size: 42px;
   padding: 5px auto;
   font-family: "Poiret One", cursive;
   color: #7a7a7a;
   margin-left: 50%;
   margin-bottom: 10px;
+  line-height: 55px;
 }
 
 .title-2 {
-  background-color: black;
   font-size: Roboto, sans-serif;
   text-align: end;
   width: 60%;
@@ -75,11 +82,12 @@
   width: 35%;
   border: solid 1.5px blue;
   margin-left: 50%;
+  color: blueviolet;
 }
 
 .button-text {
   margin-left: 72.5%;
-  margin-top: 10%;
+  margin-top: 6%;
 }
 /* 
     General Styles used on every website (Don't Repeat Yourself)
