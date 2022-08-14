@@ -42,7 +42,7 @@
   background-size: cover;
 }
 
-.cinco{
+.cinco {
   background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-matrimoni.jpg.webp);
   background-position: center center;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@
 
 .button-text {
   margin-left: 72.5%;
-  margin-top: 6%;
+  margin-top: 5.5%;
 }
 /* 
     General Styles used on every website (Don't Repeat Yourself)
