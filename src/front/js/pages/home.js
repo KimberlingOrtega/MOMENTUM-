@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Title } from "../component/Title";
 import { Description } from "../component/Description";
+import Formulario from "../component/Formulario";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
