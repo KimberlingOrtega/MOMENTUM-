@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 // import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Title } from "../component/Title";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -24,7 +25,8 @@ export const Home = () => {
           </div>
         </section>
       </div>
-
+      {/* COMPONENTE DEL TITULO*/}
+      <Title/>
       <div className="Gallery h-full w-full flex-wrap flex bg-white-400 ">
         <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
           <p className="title-1">Commercial Photography</p>
