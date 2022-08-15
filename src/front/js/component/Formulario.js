@@ -97,9 +97,11 @@ export const Formulario = () => {
                         className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="grid-state"
                       >
-                        <option>New Mexico</option>
-                        <option>Missouri</option>
-                        <option>Texas</option>
+                        <option>Boda</option>
+                        <option>Evento Nocturno</option>
+                        <option>Cocina</option>
+                        <option>Corporativo</option>
+                        <option>Moda</option>
                       </select>
                     </div>
                   </div>
@@ -131,7 +133,7 @@ export const Formulario = () => {
               </form>
             </div>
             <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-              <button
+              {/* <button
                 type="button"
                 className="px-6
           py-2.5
@@ -152,7 +154,7 @@ export const Formulario = () => {
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
+              </button> */}
               <button
                 type="button"
                 className="px-6
