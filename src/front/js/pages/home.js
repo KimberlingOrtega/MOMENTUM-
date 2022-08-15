@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Title } from "../component/Title";
 import { Description } from "../component/Description";
-import Formulario from "../component/Formulario";
+import { Formulario } from "../component/Formulario";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -31,6 +31,8 @@ export const Home = () => {
       <Title />
       {/* COMPONENTE DEL TITULO*/}
       <Description />
+      {/* COMPONENTE DEL FORMULARIO*/}
+      <Formulario />
       <div className="Gallery h-full w-full flex-wrap flex bg-white-400 ">
         <div className="Description-photo w-1/2 h-3/5 bg-white-300 py-8">
           <p className="title-1">Commercial Photography</p>
