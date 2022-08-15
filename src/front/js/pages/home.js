@@ -11,7 +11,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="h-3/4 ">
+      <div className="h-3/4">
         <section className="h-full bg-purple-300 fondo">
           <div className="flex h-full w-full items-center justify-center container mx-auto px-8">
             <div className="max-w-2xl text-center">
