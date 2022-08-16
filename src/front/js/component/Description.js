@@ -3,7 +3,7 @@ import React from "react";
 export const Description = () => {
   return (
     <>
-      <div className="  h-2/4 bg-teal-900 pt-2">
+      <div className="  h-80 bg-teal-900 pt-2">
         <p className="text-title text-2xl flex justify-center items-center h-1/3 w-6/12 mx-auto bg-white mb-2 text-slate-500 font-bold">
           Food, Beverage, Still Life ... the good to photograph
         </p>

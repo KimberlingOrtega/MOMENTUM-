@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Formulario = () => {
+export const Modal = () => {
   return (
     <div className="formulario">
       <button
@@ -14,17 +14,11 @@ export const Formulario = () => {
       leading-tight
       uppercase
       rounded
-      shadow-md
-      hover:bg-blue-700 hover:shadow-lg
-      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-      active:bg-blue-800 active:shadow-lg
-      transition
-      duration-150
-      ease-in-out"
+      shadow-md"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalLg"
       >
-        Launch demo modal
+        Formulario
       </button>
 
       <div

@@ -8,9 +8,9 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { Menu } from "./component/menu"
+import { Menu } from "./component/menu";
 import { Footer } from "./component/footer";
-
+import { Modal } from "./component/Modal";
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -18,7 +18,7 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <div className="h-screen w-screen">
+    <div className="min-h-screen w-screen">
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
@@ -29,6 +29,7 @@ const Layout = () => {
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
+          <Modal />
           <Footer />
         </ScrollToTop>
       </BrowserRouter>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Logo from "../../img/logo-fotografo.png";
 // export const Navbar = () => {
 // 	return (
 // 		<nav className="navbar navbar-light bg-light">
@@ -28,15 +28,12 @@ import { Link } from "react-router-dom";
 //   );
 // };
 
-
-
 export const Navbar = () => {
   return (
     <div className="shadow-md w-full fixed top-0 flex justify-center bg-white opacity-80 ">
       <div className="">
-        <img className="object-cover w-40 h-20" src="../../img/logo-fotografo.png"/>
+        <img className="object-cover w-40 h-20" src={Logo} />
       </div>
     </div>
-  )
-}
-
+  );
+};
