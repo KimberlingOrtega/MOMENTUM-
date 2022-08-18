@@ -7,35 +7,35 @@ export const Menu = () => {
       <div className="">
         <ul className="flex space-x-7 text-4xl font-bold mt-1 ">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Inicio</Link>
           </li>
 
           <li>
-            <Link to="/biography">Biography</Link>
+            <Link to="/biography">Biografía</Link>
           </li>
 
           <li>
-            <Link to="/wedding">Wedding</Link>
+            <Link to="/wedding">Bodas</Link>
           </li>
 
           <li>
-            <Link to="/event">Events</Link>
+            <Link to="/event">Eventos</Link>
           </li>
 
           <li>
-            <Link to="/foot">Foot</Link>
+            <Link to="/foot">Comida</Link>
           </li>
 
           <li>
-            <Link to="/corporative">corporative</Link>
+            <Link to="/corporative">Corporativo</Link>
           </li>
 
           <li>
-            <Link to="/fashion">Fashion</Link>
+            <Link to="/fashion">Moda</Link>
           </li>
 
           <li>
-            <Link to="/quotation">quotation/contact</Link>
+            <Link to="/quotation">Cotización/Contacto</Link>
           </li>
         </ul>
       </div>

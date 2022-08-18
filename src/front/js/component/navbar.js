@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Logo from "../../img/logo-fotografo.png";
 import { Login } from "./Login";
 
-¡¡TAILWIND!!
 export const Navbar = () => {
   return (
     <div className="relative">
