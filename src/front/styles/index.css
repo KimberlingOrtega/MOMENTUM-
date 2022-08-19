@@ -92,3 +92,9 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+.hr-line {
+  width: 25%;
+  border: solid 1.5px rgb(0, 153, 255);
+  margin-left: 35%;
+  color: rgb(0, 153, 255);
+}

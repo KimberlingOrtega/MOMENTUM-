@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import { Modal } from "./component/Modal";
 import { Cotizacion } from "./pages/Cotizacion-contacto";
 import { Moda } from "./pages/Moda";
+import { foodGalery } from "./component/Food";
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
