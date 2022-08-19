@@ -1,21 +1,22 @@
 import React from "react";
 import { Title } from "../component/Title";
 import { Description } from "../component/Description";
-
+import { Foto } from "../component/Foto";
 export const Moda = () => {
   return (
     <>
-      <div className="container h-screen pt-32">
+      <div className="px-0 pt-32 mx-auto">
+        <Title titulo="moda" />
+        <Description />
         <div className="grid grid-cols-4 gap-4 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-fuchsia rounded-lg">
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">01</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">02</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">03</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">04</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">05</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">06</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">07</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">08</div>
-          <div className="p-4 rounded-lg shadow-lg bg-fuchsia-500">09</div>
+          <Foto url="https://www.matteozanga.it/wp-content/uploads/2020/05/AMAZING-MODA.jpg" />
+          <Foto url="https://www.matteozanga.it/wp-content/uploads/2020/05/SIMAR-BERGAMO.jpg" />
+          <Foto url="https://www.matteozanga.it/wp-content/uploads/2020/05/WARSAW-FASHION_5.jpg" />
+          <Foto />
+          <Foto />
+          <Foto />
+          <Foto />
+          <Foto />
         </div>
       </div>
     </>

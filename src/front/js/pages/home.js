@@ -33,7 +33,7 @@ export const Home = () => {
             La fotografia corporate come valorizzazione dell’azienda, delle
             persone, della filosofia, dei prodotti, dei processi produttivi
           </p>
-          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Button
           </button>
         </div>
@@ -52,7 +52,7 @@ export const Home = () => {
             La fotografia corporate come valorizzazione dell’azienda, delle
             persone, della filosofia, dei prodotti, dei processi produttivi
           </p>
-          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Button
           </button>
         </div>
@@ -66,7 +66,7 @@ export const Home = () => {
             aziende alimentari, produttori, blog, editoria del settore
             alimentare.
           </p>
-          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Button
           </button>
         </div>
@@ -86,7 +86,7 @@ export const Home = () => {
             La fotografia corporate come valorizzazione dell’azienda, delle
             persone, della filosofia, dei prodotti, dei processi produttivi
           </p>
-          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Button
           </button>
         </div>
@@ -99,7 +99,7 @@ export const Home = () => {
             Il giorno delle nozze è fatto per essere vissuto, al fotografo di
             matrimoni spetta il compito di raccontare una storia d’amore.
           </p>
-          <button class=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Button
           </button>
         </div>

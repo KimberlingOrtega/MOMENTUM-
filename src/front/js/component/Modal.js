@@ -82,8 +82,8 @@ export const Modal = () => {
                   <div className="w-full px-3 mb-4 md:mb-0">
                     <div className="relative">
                       <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-state"
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        htmlFor="grid-state"
                       >
                         Selecciona un servicio.
                       </label>
