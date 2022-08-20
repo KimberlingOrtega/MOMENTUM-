@@ -1,6 +1,6 @@
 import React from "react";
 
-export const form = () => {
+export const Form = () => {
   return (
     <form className="w-full ">
       <div className="flex flex-wrap -mx-3 mb-6">

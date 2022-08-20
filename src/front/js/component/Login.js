@@ -18,7 +18,7 @@ export const Login = () => {
 
       <div
         id="authentication-modal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-hidden="true"
         className={`${
           isShow ? "" : "hidden"
