@@ -2,18 +2,21 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Menu } from "./component/menu";
 import { Footer } from "./component/footer";
 
-import { Cotizacion } from "./pages/Cotizacion-contacto";
-import { Moda } from "./pages/Moda";
-import { food } from "./component/Food";
+import { Inicio } from "./pages/inicio";
+import { Biografia } from "./pages/biografia";
+import { Boda } from "./pages/boda";
+import { Evento } from "./pages/evento";
+import { Comida } from "./pages/comida";
+import { Corporativo } from "./pages/corporativo";
+import { Moda } from "./pages/moda";
+import { Cotizacion } from "./pages/cotizacion";
+
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -28,17 +31,15 @@ const Layout = () => {
           <Menu />
 
           <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Single />} path="/single/:theid" />
-            <Route element={<h1>Not found!</h1>} />
-            {/* <Route element={<Boda />} path="/boda" />
+            <Route element={<Inicio />} path="/inicio" />
             <Route element={<Biografia />} path="/biografia" />
-            <Route element={<evento />} path="/evento" />
-            <Route element={<Cocina />} path="/cocina" /> */}
-            {/* <Route element={<Corporativo />} path="/corporativo" /> */}
-            <Route element={<Moda />} path="/fashion" />
-            <Route element={<Cotizacion />} path="/quotation" />
+            <Route element={<Boda />} path="/boda" />
+            <Route element={<Evento />} path="/evento" />
+            <Route element={<Comida />} path="/comida" />
+            <Route element={<Corporativo />} path="/corporativo" />
+            <Route element={<Moda />} path="/moda" />
+            <Route element={<Cotizacion />} path="/cotizacion" />
+            <Route element={<h1>Not found!</h1>} />
           </Routes>
 
           <Footer />

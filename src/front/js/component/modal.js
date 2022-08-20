@@ -1,8 +1,18 @@
 import React from "react";
-import { Form } from "../pages/Form";
+import { Form } from "../pages/form";
+
 export const Modal = () => {
   return (
-    <div className="formulario">
+    <div className="formulario w-full h-60 mt-3">
+      <p className="text-title text-3xl flex justify-center items-center h-1/4 w-6/12 mx-auto bg-white mb-2 text-slate-500 font-bold">
+        Food, Beverage, Still Life ... the good to photograph
+      </p>
+      <hr className="hr-line" />
+      <p className="text-title text-xl flex justify-center items-center w-7/12 mx-auto text-teal-600 font-semibold h-1/4 px-16 mt-3 mb-3">
+        Commercial images for restaurants, menus, catalogs, cookbooks, food
+        companies, producers, farms, blogs and food sector publishing.
+      </p>
+      <div className="flex justify-center">
       <button
         type="button"
         className="px-6
@@ -14,12 +24,15 @@ export const Modal = () => {
       leading-tight
       uppercase
       rounded
-      shadow-md"
+      shadow-md
+      h-10
+      flex justify-center"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalLg"
       >
         Formulario
       </button>
+      </div>
 
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"

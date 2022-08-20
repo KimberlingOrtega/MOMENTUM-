@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import { Modal } from "../component/Modal";
-export const Home = () => {
+import { Modal } from "../component/modal";
+export const Inicio = () => {
   const { store, actions } = useContext(Context);
 
   return (
