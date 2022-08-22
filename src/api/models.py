@@ -10,7 +10,8 @@ class User(db.Model):
     password = db.Column(db.String(250), unique=False, nullable=False)
     salt = db.Column(db.String(80), nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-
+    orders = db.relationship('UserOrder', backref='user', uselist=True)   #RELACION,TABLA USER-ORDER:
+   
     def __repr__(self):
         return f'<User {self.email}>'
 
@@ -34,3 +35,17 @@ class User(db.Model):
             print(error)
             db.session.rollback()
             return None
+           
+class UserOrder(db.Model): #TABLA DE ORDEN 
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer,db.ForeingKey('user.id'), nullable=False)
+    __table_args__=(db.UniqueConstraint(
+        'user_id',
+        'id',
+        name="unique_user_order"
+    ),)     
+    
+    def serialize(self):
+        return{
+            "id": self.id
+        }      
