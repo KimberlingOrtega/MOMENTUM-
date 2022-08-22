@@ -38,7 +38,7 @@ class User(db.Model):
            
 class UserOrder(db.Model): #TABLA DE ORDEN 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer,db.ForeingKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
     __table_args__=(db.UniqueConstraint(
         'user_id',
         'id',
