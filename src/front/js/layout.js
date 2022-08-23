@@ -16,6 +16,7 @@ import { Comida } from "./pages/comida";
 import { Corporativo } from "./pages/corporativo";
 import { Moda } from "./pages/moda";
 import { Cotizacion } from "./pages/cotizacion";
+import { Datos } from "./pages/datos";
 
 //create your first component
 const Layout = () => {
@@ -39,6 +40,7 @@ const Layout = () => {
             <Route element={<Corporativo />} path="/corporativo" />
             <Route element={<Moda />} path="/moda" />
             <Route element={<Cotizacion />} path="/cotizacion" />
+            <Route element={<Datos />} path="/datos" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
 
