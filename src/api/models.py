@@ -10,8 +10,9 @@ class User(db.Model):
     phone_number = db.Column(db.String(20), unique=True, nullable=False)
     salt = db.Column(db.String(80), nullable=False)
     is_active = db.Column(db.Boolean, unique=False, nullable=False)
-    orders = db.relationship('UserOrder', backref='user', uselist=True)   #RELACION,TABLA USER-ORDER:
-    admin = db.Column(db.Boolean, nullable=True)
+    orders = db.relationship('UserOrder', backref='user', uselist=True)
+    cotizaciones = db.relationship('Cotizacion', backref='user', uselist=True)   #RELACION,TABLA USER-ORDER:
+    is_admin = db.Column(db.Boolean, nullable=True)
     def __repr__(self):
         return f'<User {self.email}>'
 
@@ -39,6 +40,9 @@ class User(db.Model):
 class UserOrder(db.Model): #TABLA DE ORDEN 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
+    full_name = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    link = db.Column(db.String(250), nullable=False)
     __table_args__=(db.UniqueConstraint(
         'user_id',
         'id',
@@ -56,7 +60,12 @@ class Cotizacion(db.Model):
     email = db.Column(db.String(50), nullable=False)
     phone_number = db.Column(db.String(20), nullable=False)
     service = db.Column(db.String(50), nullable=False)
+    location = db.Column(db.String(), nullable=False)
     description = db.Column(db.String(400), nullable=False)
-              
-        
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)  
+    __table_args__=(db.UniqueConstraint(
+        'user_id',
+        'id',
+        name="unique_cotizaciones"
+    ),)  
      

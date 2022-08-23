@@ -7,7 +7,7 @@ export const Menu = () => {
       <div className="">
         <ul className="flex space-x-7 text-4xl font-bold mt-1 ">
           <li>
-            <Link to="/inicio">Inicio</Link>
+            <Link to="/">Inicio</Link>
           </li>
 
           <li>
