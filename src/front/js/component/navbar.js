@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "../../img/logo-fotografo.png";
 import { Login } from "./login";
+import { Usermenu } from "./usermenu";
+import { Adminmenu } from "./adminmenu";
 
 export const Navbar = () => {
   return (
@@ -12,7 +13,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="absolute right-0 flex items-center h-20 mx-4">
-        <Login />
+        <Usermenu cliente="Roberto De Freitas" />
       </div>
     </div>
   );
