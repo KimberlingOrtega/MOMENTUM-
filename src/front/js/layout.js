@@ -17,8 +17,8 @@ import { Corporativo } from "./pages/corporativo";
 import { Moda } from "./pages/moda";
 import { Cotizacion } from "./pages/cotizacion";
 import { Datos } from "./pages/datos";
-import { Clientes } from "./pages/clientes-admin";
-import { Admin } from "./pages/trabajos-admin";
+import { Clientes } from "./pages/clientes";
+import { Admin } from "./pages/admin";
 import { Trabajos } from "./pages/trabajos";
 import { Prueba } from "./pages/prueba";
 

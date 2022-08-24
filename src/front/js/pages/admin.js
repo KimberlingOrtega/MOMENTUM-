@@ -8,25 +8,27 @@ export const Admin = () => {
         <div className="h-screen">
             <div className=" flex justify-center">
                 <div class="mt-5 grid grid-cols-1 gap-2 ">
-                <div className="1 flex ">
+                <div className="1 flex items-center">
                         <div className=''>
-                        <input  type="text" name="name" required  placeholder='hola'></input>
+                        <input  className='' type="text" name="name" required  placeholder='Full Name'></input>
                         </div>
 
                         <div>
-                        <input  type="text" name="name" required  ></input>
+                        <input className='ml-3' type="text" name="name" required placeholder='Fecha' ></input>
                         </div>
 
                         <div>
-                        <input  type="text" name="name" required  ></input>
+                        <input className='ml-3' type="text" name="name" required  placeholder='Servicio'></input>
                         </div>
                         
                         <div>
-                        <input  type="text" name="name" required  ></input>
+                        <input className='ml-3' type="text" name="name" required  placeholder='Link'></input>
                         </div>
                         
-                        <div>
-                        boton
+                        <div className='ml-3 '>
+                            <button class="p-2 bg-sky-500 hover:bg-sky-700 ...">
+                                Salvar
+                            </button>
                         </div>
                     </div>
                     <div className="1 flex gap-4">

@@ -10,8 +10,8 @@ export const Adminmenu = ({admin}) => {
   </button>
   <ul className="dropdown-menu">
     <li><Link className="dropdown-item" to="/datos">Datos</Link></li>
-    <li><Link className="dropdown-item" to="/clientes-admin">Clientes</Link></li>
-    <li><Link className="dropdown-item" to="/trabajos-admin">Trabajos realizados</Link></li>
+    <li><Link className="dropdown-item" to="/clientes">Clientes</Link></li>
+    <li><Link className="dropdown-item" to="/admin">Trabajos realizados</Link></li>
     <li><hr class="dropdown-divider"/></li>
     <li><a className="dropdown-item" href="#">Salir</a></li>
 
