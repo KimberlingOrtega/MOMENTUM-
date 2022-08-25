@@ -14,9 +14,8 @@ export const Navbar = () => {
       </div>
       <div className="absolute right-0 flex items-center h-20 mx-4">
         <Adminmenu admin="Roberto De Freitas" />
-        {/* <Login /> */}
+        <Login />
       </div>
     </div>
   );
 };
-
