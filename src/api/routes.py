@@ -42,6 +42,3 @@ def handle_register():
     if create_user is not None:
         return jsonify(create_user.serialize()),201
     return jsonify({"message":"Usuario no creado"}),400    
-
-    
-    

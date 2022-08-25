@@ -27,9 +27,9 @@ class User(db.Model):
         }
     @classmethod    
     def create(cls,user):
+        new_user = cls(**user)
+        db.session.add(new_user)
         try:
-            new_user = cls(**user)
-            db.session.add(new_user)
             db.session.commit()
             return new_user
         except Exception as error:

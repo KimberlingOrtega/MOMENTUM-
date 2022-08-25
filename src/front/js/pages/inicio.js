@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Modal } from "../component/modal";
+import { Link } from "react-router-dom";
+
 export const Inicio = () => {
   const { store, actions } = useContext(Context);
 
@@ -33,9 +35,9 @@ export const Inicio = () => {
             La fotografia corporate come valorizzazione dell’azienda, delle
             persone, della filosofia, dei prodotti, dei processi produttivi
           </p>
-          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-            Button
-          </button>
+          <Link to="/corporativo"><button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            Corporativo
+          </button></Link>
         </div>
         <div className="img-photo 1 w-1/2 bg-green-300 h-80 flex items-center justify-center">
           <p className="title-photo">CORPORATE</p>
@@ -52,9 +54,9 @@ export const Inicio = () => {
             La fotografia corporate come valorizzazione dell’azienda, delle
             persone, della filosofia, dei prodotti, dei processi produttivi
           </p>
-          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-            Button
-          </button>
+          <Link to="/moda"><button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            Moda
+          </button></Link>
         </div>
 
         <div className="Description-photo w-1/2 h-80 bg-white-300 py-8">
@@ -66,9 +68,9 @@ export const Inicio = () => {
             aziende alimentari, produttori, blog, editoria del settore
             alimentare.
           </p>
-          <button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-            Button
-          </button>
+          <Link to="/comida"><button className=" button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            Comida
+          </button></Link>
         </div>
         <div className="img-photo tres w-1/2 bg-green-300 h-80 flex items-center justify-center">
           <p className="title-photo">FOOD</p>
