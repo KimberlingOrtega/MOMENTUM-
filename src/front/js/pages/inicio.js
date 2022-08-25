@@ -31,6 +31,7 @@ export const Inicio = () => {
       <InicioTF image="https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-food.jpg.webp" title="Fotografía de comida" titleimg="Comida" text="Alimentación, bebidas, bodegones… imágenes comerciales para restaurantes, empresas de alimentación, productoras, blogs, editorial del sector alimentario." buttonname="Comida"/>
       <InicioFT image="https://img.freepik.com/foto-gratis/retrato-joven-trabajador-casco-gran-planta-metalurgica_146671-19548.jpg?w=1480&t=st=1661441259~exp=1661441859~hmac=5f9977a52b8ecf6391e844549544f87d701b18e1017addad7d11c177144f9e93" title="Fotografía comercial" titleimg="Corporativo" text="La fotografía corporativa como puesta en valor de la empresa, las personas, la filosofía, los productos, los procesos productivos." buttonname="Corporativo" />
       <InicioTF image="https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-moda.jpg.webp" title="Fotografía Moda" titleimg="Moda" text="Sesiones de fotos de moda para catálogos, libros, colecciones y publicidad para tiendas, casas de moda, estilistas, artesanos." buttonname="Moda"/>
+      <Modal />
     </>
   );
 };

@@ -5,12 +5,13 @@ export const Modal = () => {
   return (
     <div className="formulario w-full h-60 mt-3">
       <p className="text-title text-3xl flex justify-center items-center h-1/4 w-6/12 mx-auto bg-white mb-2 text-slate-500 font-bold">
-        Food, Beverage, Still Life ... the good to photograph
+      ¿Estás buscando un fotógrafo o la foto adecuada?
       </p>
       <hr className="hr-line" />
-      <p className="text-title text-xl flex justify-center items-center w-7/12 mx-auto text-teal-600 font-semibold h-1/4 px-16 mt-3 mb-3">
-        Commercial images for restaurants, menus, catalogs, cookbooks, food
-        companies, producers, farms, blogs and food sector publishing.
+      <p className="text-title text-xl flex justify-center items-center w-7/12 mx-auto text-gray-400 font-semibold h-1/4 px-16 mt-3 mb-3">
+      CUÉNTAME SOBRE TU PROYECTO:
+SESIÓN FOTOGRÁFICA, ENVÍO, REPORTAJE, FOTOGRAFÍA DE ACCIÓN, MODA, ALIMENTACIÓN, RETRATO CORPORATIVO, SERVICIO INDUSTRIAL...
+JUNTOS ENCONTRAREMOS LA SOLUCIÓN ADECUADA.
       </p>
       <div className="flex justify-center">
       <button
@@ -30,7 +31,7 @@ export const Modal = () => {
         data-bs-toggle="modal"
         data-bs-target="#exampleModalLg"
       >
-        Formulario
+        Contáctame
       </button>
       </div>
 
