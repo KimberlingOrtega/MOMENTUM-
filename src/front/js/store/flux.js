@@ -47,6 +47,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         //reset the global store
         setStore({ demo: demo });
       },
+
+      userLogin: async (data) => {
+        let response = await fetch(`${process.env.BACKEND_URL}/api/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        if (response.ok) {
+          let body = await response.json();
+          localStorage.setItem("token", body.access_token);
+          return true;
+        }
+        return false;
+      },
     },
   };
 };

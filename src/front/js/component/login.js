@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../store/appContext";
 
 export const Login = () => {
+  const { store, actions } = useContext(Context);
   const [isShow, setIsShow] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  let data = {
+    email: email,
+    password: password,
+  };
+  const handleLogin = async () => {
+    if (await actions.userLogin(data)) {
+      alert("usuario logueado");
+    }
+  };
 
   return (
     <div>
@@ -15,7 +29,7 @@ export const Login = () => {
       >
         Login
       </button>
-      
+
       <div
         id="authentication-modal"
         tabIndex="-1"
@@ -67,6 +81,8 @@ export const Login = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     placeholder="name@company.com"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div>
@@ -83,6 +99,8 @@ export const Login = () => {
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="flex justify-between">
@@ -105,12 +123,12 @@ export const Login = () => {
                   </div>
                 </div>
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={handleLogin}
                   className="titlecomponent w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Login to your account
                 </button>
-
               </form>
             </div>
           </div>
