@@ -16,9 +16,9 @@ export const InicioFT = (props) => {
         <p className="text-title text-xl flex justify-center items-center w-7/12 mx-auto text-gray-400 font-semibold h-1/4 px-16 mt-3 mb-3">
           {props.text}
         </p>
-        <Link to="/moda"><button className="button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        {/* <Link to="/moda"><button className="button-text bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
               {props.buttonname}</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   )
