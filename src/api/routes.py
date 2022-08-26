@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Cotizacion
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_jwt_extended import get_jwt_identity,create_access_token,jwt_required
@@ -43,5 +43,30 @@ def handle_register():
         return jsonify(create_user.serialize()),201
     return jsonify({"message":"Usuario no creado"}),400    
 
-
-# @api.route("/cotizacion", methods)
+#REGISTRO DE NUEVAS COTIZACIONES
+@api.route("/cotizacion", methods =['POST'])
+def quotation():
+    body = request.json
+    full_name = body["full_name"]
+    email = body["email"]
+    phone_number = body["phone_number"]
+    service = body["service"]
+    location = body["location"]
+    description = body["description"]
+    new_quotation = Cotizacion.create(body)
+    if new_quotation is not None:
+        return jsonify(new_quotation.serialize()),201
+    return jsonify({"message":"cotizacion no creada"}),400
+    
+    #REGISTRO DE TRABAJOS REALIZADOS
+@api.route("/trabajos-realizados", methods =['POST'])
+def trabajos_realizados():
+    body = request.json
+    full_name = body["full_name"]
+    date = body["date"]
+    service_name = body["service_name"]
+    work_link = body["work_link"]
+    new_trabajos = Trabajos.create(body)
+    if new_trabajos is not None:
+        return jsonify(new_trabajos.serialize()),201
+    return jsonify({"message":"trabajos no realizados"}),400

@@ -52,7 +52,7 @@ export const Form = () => {
               id="grid-state"
             >
               <option>Boda</option>
-              <option>Evento Nocturno</option>
+              <option>Eventos</option>
               <option>Cocina</option>
               <option>Corporativo</option>
               <option>Moda</option>

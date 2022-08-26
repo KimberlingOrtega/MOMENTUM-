@@ -11,7 +11,7 @@ class User(db.Model):
     salt = db.Column(db.String(80), nullable=False)
     is_active = db.Column(db.Boolean, unique=False, nullable=False)
     orders = db.relationship('UserOrder', backref='user', uselist=True)
-    cotizaciones = db.relationship('Cotizacion', backref='user', uselist=True)   #RELACION,TABLA USER-ORDER:
+    # cotizaciones = db.relationship('Cotizacion', backref='user', uselist=True)   #RELACION,TABLA USER-ORDER:
     is_admin = db.Column(db.Boolean, nullable=True)
     def __repr__(self):
         return f'<User {self.email}>'
@@ -37,12 +37,13 @@ class User(db.Model):
             db.session.rollback()
             return None
            
-class UserOrder(db.Model): #TABLA DE ORDEN 
+class UserOrder(db.Model): #TABLA DE TRABAJOS REALIZADOS
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
     full_name = db.Column(db.String(100), nullable=False)
-    location = db.Column(db.String(100), nullable=False)
-    link = db.Column(db.String(250), nullable=False)
+    date = db.Column(db.String(100), nullable=False)
+    service_name = db.Column(db.String(100), nullable=False)
+    work_link = db.Column(db.String(250), nullable=False)
     __table_args__=(db.UniqueConstraint(
         'user_id',
         'id',
@@ -62,10 +63,28 @@ class Cotizacion(db.Model):
     service = db.Column(db.String(50), nullable=False)
     location = db.Column(db.String(), nullable=False)
     description = db.Column(db.String(400), nullable=False)
-    user_id = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)  
-    __table_args__=(db.UniqueConstraint(
-        'user_id',
-        'id',
-        name="unique_cotizaciones"
-    ),)  
-     
+       
+    
+    @classmethod    
+    def create(cls,quotation):
+        new_quotation = cls(**quotation)
+        db.session.add(new_quotation)
+        try:
+            db.session.commit()
+            return new_quotation
+        except Exception as error:
+            print(error)
+            db.session.rollback()
+            return None 
+   
+    def serialize(self):
+        return{
+            "id": self.id,
+            "full_name": self.full_name,
+            "email": self.email,
+            "phone_number": self.phone_number,
+            
+        }
+        
+        
+        
