@@ -63,6 +63,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
         return false;
       },
+      requestQuotation: async (data) => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/cotizacion`,
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
+        if (response.ok) {
+          let body = await response.json();
+          console.log(body);
+        }
+      },
     },
   };
 };

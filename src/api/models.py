@@ -48,11 +48,27 @@ class UserOrder(db.Model): #TABLA DE TRABAJOS REALIZADOS
         'user_id',
         'id',
         name="unique_user_order"
-    ),)     
+    ),) 
+
+    @classmethod    
+    def create(cls,trabajos_realizados):
+        new_work = cls(**trabajos_realizados)
+        db.session.add(new_work)
+        try:
+            db.session.commit()
+            return new_work
+        except Exception as error:
+            print(error)
+            db.session.rollback()
+            return None     
     
     def serialize(self):
         return{
-            "id": self.id
+            "id": self.id,
+            "full_name": self.full_name,
+            "date": self.date,
+            "service_name": self.service_name,
+            "work_link": self.work_link
         } 
            
 class Cotizacion(db.Model):
@@ -61,7 +77,7 @@ class Cotizacion(db.Model):
     email = db.Column(db.String(50), nullable=False)
     phone_number = db.Column(db.String(20), nullable=False)
     service = db.Column(db.String(50), nullable=False)
-    location = db.Column(db.String(), nullable=False)
+    location = db.Column(db.String(400), nullable=False)
     description = db.Column(db.String(400), nullable=False)
        
     
