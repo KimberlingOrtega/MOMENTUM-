@@ -14,9 +14,9 @@ export const Cotizacion = () => {
           </p>
           <p className="text-title text-xl flex justify-center items-center w-10/12 mx-auto text-teal-600 font-semibold  px-16 mt-3 mb-3"></p>
           <p className="text-title text-xl flex justify-center items-center w-10/12 mx-auto font-semibold  px-16 mt-3 mb-3">
-            <i class="fab fa-linkedin text-5xl"></i>
-            <i class="fa-brands fa-square-facebook text-5xl"></i>
-            <i class="fa-brands fa-square-instagram text-5xl"></i>
+            <i className="fab fa-linkedin text-5xl"></i>
+            <i className="fa-brands fa-square-facebook text-5xl"></i>
+            <i className="fa-brands fa-square-instagram text-5xl"></i>
           </p>
         </div>
 
@@ -35,7 +35,6 @@ export const Cotizacion = () => {
           </div>
         </div>
       </div>
-      <Places />
     </div>
   );
 };
