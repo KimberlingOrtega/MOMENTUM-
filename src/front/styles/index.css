@@ -129,16 +129,17 @@ img {
 
 .icon {
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 600px) {
   .column {
     flex: 100%;
   }
+
 }
 @media (max-width: 800px) {
   .column {
     flex: 50%;
-  }
+}
 }

@@ -7,7 +7,12 @@ export const Boda = () => {
   return (
     <div className="px-0 pt-32 mx-auto ">
       <Title titulo="Boda" />
-      <Description />
+      <Description
+        title="
+        La emoción de tu día más hermoso, un recuerdo que hay que detener."
+        text="
+        El día de la boda está hecho para ser vivido, el fotógrafo de bodas tiene la tarea de contar una historia de amor, deteniendo esos momentos inolvidables, emociones y estados de ánimo, pequeños detalles, sonrisas, lágrimas, expresiones, personas y destellos del día de una boda."
+      />
 
       <div className="row ">
         <div className="column ">
