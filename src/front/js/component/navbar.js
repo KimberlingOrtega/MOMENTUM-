@@ -3,6 +3,7 @@ import Logo from "../../img/logo-fotografo.png";
 import { Login } from "./login";
 import { Usermenu } from "./usermenu";
 import { Adminmenu } from "./adminmenu";
+// Automatizar Adminmenu/Usermenu al realizar el login dependiendo si is_admin es verdadero o falso (si es verdadero es admin)
 
 export const Navbar = () => {
   return (
@@ -13,7 +14,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="absolute right-0 flex items-center h-20 mx-4">
-        <Usermenu cliente="Roberto De Freitas" />
+        <Adminmenu admin="Roberto De Freitas" />
         <Login />
       </div>
     </div>
