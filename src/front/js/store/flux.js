@@ -1,53 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      message: null,
-      demo: [
-        {
-          title: "FIRST",
-          background: "white",
-          initial: "white",
-        },
-        {
-          title: "SECOND",
-          background: "white",
-          initial: "white",
-        },
-      ],
+      is_admin: null,
+      token: null,
     },
     actions: {
-      // Use getActions to call a function within a fuction
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
-      },
-
-      getMessage: async () => {
-        try {
-          // fetching data from the backend
-          const resp = await fetch(process.env.BACKEND_URL + "/api/hola");
-          const data = await resp.json();
-          setStore({ message: data.message });
-          // don't forget to return something, that is how the async resolves
-          return data;
-        } catch (error) {
-          console.log("Error loading message from backend", error);
-        }
-      },
-      changeColor: (index, color) => {
-        //get the store
-        const store = getStore();
-
-        //we have to loop the entire demo array to look for the respective index
-        //and change its color
-        const demo = store.demo.map((elm, i) => {
-          if (i === index) elm.background = color;
-          return elm;
-        });
-
-        //reset the global store
-        setStore({ demo: demo });
-      },
-
       userLogin: async (data) => {
         let response = await fetch(`${process.env.BACKEND_URL}/api/login`, {
           method: "POST",
@@ -59,9 +16,19 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           let body = await response.json();
           localStorage.setItem("token", body.access_token);
+          localStorage.setItem("is_admin", body.is_admin);
+          setStore({ token: body.access_token });
+          setStore({ is_admin: body.is_admin });
           return true;
         }
         return false;
+      },
+      logOut: () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("is_admin");
+        setStore({ token: null });
+        setStore({ is_admin: null });
+        return true;
       },
       requestQuotation: async (data) => {
         let response = await fetch(
@@ -77,7 +44,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           let body = await response.json();
           console.log(body);
+          return true;
         }
+        return false;
       },
     },
   };
