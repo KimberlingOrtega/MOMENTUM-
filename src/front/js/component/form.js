@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import usePlacesAutocomplete, {
   getGeocode,
@@ -12,22 +12,38 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-
+import { Context } from "../store/appContext";
+import { sweetNotification } from "../utils/sweetnotification";
 export const Form = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.GOOGLE_MAPS_API,
     libraries: ["places"],
   });
+  const { store, actions } = useContext(Context);
   const [fullName, setFullName] = useState("");
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [servise, setServise] = useState("");
+  const [service, setService] = useState("Boda");
   const [description, setDescription] = useState("");
 
   const [selected, setSelected] = useState(null);
   const [center, setCenter] = useState({ lat: 10.5, lng: -66.917 });
   const [zoom, setZoom] = useState(10);
+
+  const handleRequestQuotation = async () => {
+    let data = {
+      full_name: fullName,
+      email: email,
+      phone_number: phoneNumber,
+      service: service,
+      location: location,
+      description: description,
+    };
+    if (await actions.requestQuotation(data)) {
+      sweetNotification("success", "Solicitud enviada");
+    }
+  };
 
   useEffect(() => {}, [center]);
 
@@ -99,9 +115,9 @@ export const Form = () => {
               className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
               onChange={(e) => {
-                setServise(e.target.options[e.target.selectedIndex].text);
+                setService(e.target.options[e.target.selectedIndex].text);
               }}
-              value={servise}
+              value={service}
             >
               <option>Boda</option>
               <option>Eventos</option>
@@ -157,6 +173,7 @@ focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       flex justify-center"
           data-bs-toggle="modal"
           data-bs-target="#exampleModalLg"
+          onClick={handleRequestQuotation}
         >
           Solicitar
         </button>
