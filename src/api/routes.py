@@ -23,11 +23,11 @@ def create_login():
     password =request.json.get("password", None)
     user = User.query.filter_by(email=email).one_or_none()
     if user is None:
-        return jsonify({"msg": "El usuario nop existe"}), 401
+        return jsonify({"msg": "El usuario no existe"}), 404
     salt = user.salt
     if check_password_hash(user.password, salt + password):
         access_token = create_access_token(identity=user.id)
-        return jsonify(access_token=access_token)
+        return jsonify({"access_token":access_token,"is_admin":user.is_admin})
     return jsonify({"msg": "contraseña incorrecta"}), 401
 
 #|REGISTRO DE USUARIO
