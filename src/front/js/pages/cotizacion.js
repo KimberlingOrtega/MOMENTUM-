@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "./form";
+import { Form } from "../component/form";
 import { Title } from "../component/title";
 import Places from "./places";
 

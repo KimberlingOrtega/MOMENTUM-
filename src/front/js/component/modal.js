@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "../pages/form";
+import { Form } from "./form";
 
 export const Modal = () => {
   return (
