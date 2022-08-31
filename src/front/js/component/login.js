@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Login = () => {
@@ -6,14 +7,21 @@ export const Login = () => {
   const [isShow, setIsShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   let data = {
     email: email,
     password: password,
   };
   const handleLogin = async () => {
     if (await actions.userLogin(data)) {
-      alert("usuario logueado");
+      let isAdmin = store.is_admin;
+      console.log(isAdmin);
+      if (isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+      // setIsShow(false);
     }
   };
 
