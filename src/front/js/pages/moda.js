@@ -40,7 +40,7 @@ export const Moda = () => {
         <div className="column ">
           <Foto
             className="icon"
-            url="https://www.matteozanga.it/wp-content/uploads/2020/05/AMAZING-MODA.jpg.webp"
+            url="https://img.freepik.com/foto-gratis/imagen-moda-estilo-callejero-increible-moda-joven-mujer-bonita-posando-calle_291049-2.jpg?w=1480&t=st=1661900597~exp=1661901197~hmac=2ed1691fa482bb5758be5435f66f4744ea94b7568959a7be4905b45c758a31ca"
           />
           <Foto
             className="icon"
@@ -48,11 +48,11 @@ export const Moda = () => {
           />
           <Foto
             className="icon"
-            url="https://www.matteozanga.it/wp-content/uploads/2020/05/SEASE-CLOTHING-768x512.jpg.webp"
+            url="https://www.matteozanga.it/wp-content/uploads/2020/05/SIMAR-MODA.jpg.webp"
           />
           <Foto
             className="icon"
-            url="https://www.matteozanga.it/wp-content/uploads/2020/05/SIMAR-MODA.jpg.webp"
+            url="https://www.matteozanga.it/wp-content/uploads/2020/05/SEASE-CLOTHING-768x512.jpg.webp"
           />
           <Foto
             className="icon"

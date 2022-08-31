@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Menu = () => {
   return (
-    <div className="shadow-md w-full fixed top-20 flex justify-center h-12 bg-white opacity-50">
+    <div className="shadow-md w-full fixed top-20 flex justify-center h-12 bg-white ">
       <div className="">
         <ul className="flex space-x-7 text-4xl font-bold mt-1 ">
           <li>
