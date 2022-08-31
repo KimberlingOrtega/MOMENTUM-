@@ -1,7 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Usermenu = ({ cliente }) => {
+  const navigate = useNavigate();
+  const { store, actions } = useContext(Context);
+
+  const handleLogOut = () => {
+    if (actions.logOut()) {
+      navigate("/");
+    }
+  };
   return (
     <div>
       <div className="dropdown">
@@ -11,7 +20,7 @@ export const Usermenu = ({ cliente }) => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          {cliente}
+          <i className="fa-solid fa-bars"></i>
         </button>
         <ul className="dropdown-menu">
           <li>
@@ -32,11 +41,9 @@ export const Usermenu = ({ cliente }) => {
           <li>
             <hr className="dropdown-divider" />
           </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Salir
-            </a>
-          </li>
+          <Link className="dropdown-item" to="/" onClick={handleLogOut}>
+            Salir
+          </Link>
         </ul>
       </div>
     </div>
