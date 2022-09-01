@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Title } from "../component/title";
+import { Context } from "../store/appContext";
 
 export const Datos = () => {
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [fullName, setFullName] = useState("");
+
+  const getUserData = async () => {
+    if (await actions.getUserData()) {
+      setEmail(store.userData.email);
+      setPhoneNumber(store.userData.phone_number);
+      setFullName(store.userData.full_name);
+    }
+  };
+
+  const handleUpdateData = async () => {
+    let data = {
+      full_name: fullName,
+      email: email,
+      phone_number: phoneNumber,
+    };
+    if (await actions.updateUserData(data)) {
+    }
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
   return (
     <div className="px-0 pt-32 ">
       {/* <Title titulo="Datos" /> */}
@@ -27,6 +53,10 @@ export const Datos = () => {
                       </label>
                       <div className="flex flex-col items-start">
                         <input
+                          onChange={(e) => {
+                            setFullName(e.target.value);
+                          }}
+                          value={fullName}
                           type="text"
                           name="name"
                           className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -42,9 +72,14 @@ export const Datos = () => {
                       </label>
                       <div className="flex flex-col items-start">
                         <input
+                          onChange={(e) => {
+                            setPhoneNumber(e.target.value);
+                          }}
+                          value={phoneNumber}
                           type="text"
                           name="phone"
-                          id="phone" className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                          id="phone"
+                          className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         />
                       </div>
                     </div>
@@ -57,15 +92,20 @@ export const Datos = () => {
                       </label>
                       <div className="flex flex-col items-start">
                         <input
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                          }}
                           type="email"
                           name="email"
+                          value={email}
                           className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         />
                       </div>
                     </div>
                     <div className="flex items-center justify-end mt-4">
                       <button
-                        type="submit"
+                        type="button"
+                        onClick={handleUpdateData}
                         className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                       >
                         Save
@@ -112,7 +152,7 @@ export const Datos = () => {
                   </div>
                   <div className="flex items-center justify-end mt-4">
                     <button
-                      type="submit"
+                      type="button"
                       className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                     >
                       Save
