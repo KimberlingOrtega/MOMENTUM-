@@ -21,6 +21,7 @@ import { Clientes } from "./pages/clientes";
 import { Admin } from "./pages/admin";
 import { Trabajos } from "./pages/trabajos";
 import { Prueba } from "./pages/prueba";
+import { Cotizacionlogin } from "./pages/cotizacionlogin";
 
 //create your first component
 const Layout = () => {
@@ -49,6 +50,7 @@ const Layout = () => {
             <Route element={<Admin />} path="/admin" />
             <Route element={<Trabajos />} path="/trabajos" />
             <Route element={<Prueba />} path="/prueba" />
+            <Route element={<Cotizacionlogin />} path="/nuevacotizacion"/>
             <Route element={<h1>Not found!</h1>} />
           </Routes>
 

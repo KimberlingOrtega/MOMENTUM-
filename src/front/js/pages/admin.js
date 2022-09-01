@@ -9,13 +9,13 @@ export const Admin = () => {
         <div className="w-1/4 h-screen">
           <img
             className="h-screen object-cover"
-            src="https://img.freepik.com/foto-gratis/tiro-vertical-escala-grises-lente-camara-sobre-superficie-madera_181624-514.jpg?w=826&t=st=1661902397~exp=1661902997~hmac=4e2473f9adc1ead018298037fc1c81b92b95b7b1c7eaa1fba42a3b9b9f3febe2"
+            src="https://img.freepik.com/foto-gratis/tiro-largo-bonita-mujer-posando-studio_23-2148532564.jpg?w=740&t=st=1662067213~exp=1662067813~hmac=47b6e344434539d329554ffcda5c8485116f209bff20fd7317bb6f0bfb77caf3"
           />
         </div>
         <div className="w-3/4 mt-8">
           <div className="">
-            <div className="flex justify-center principal-title text-black">Clientes</div>
-            <div className="flex items-center justify-center mt-8">
+            <div className="flex justify-center principal-title text-black font-bold">Trabajos realizados</div>
+            <div className="flex items-center justify-center mt-10">
               <div className="">
                 <input
                   className=""
@@ -56,10 +56,14 @@ export const Admin = () => {
                 ></input>
               </div>
 
-              <div className="ml-3 ">
-                <button className="p-2 bg-sky-500 hover:bg-sky-700 ...">
-                  Salvar
-                </button>
+              <div className="ml-3 flex items-center">
+              <button
+                        type="button"
+                        
+                        className="inline-flex items-center px-3 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+                      >
+                        Guardar
+                      </button>
               </div>
             </div>
             {/* LISTAR EN UN DIV AQUI LOS CLIENTES YA REGISTRADOS */}
