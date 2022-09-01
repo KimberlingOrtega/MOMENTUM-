@@ -25,6 +25,7 @@ class User(db.Model):
             "salt": self.salt
             # do not serialize the password, its a security breach
         }
+        
     @classmethod    
     def create(cls,user):
         new_user = cls(**user)
@@ -36,6 +37,20 @@ class User(db.Model):
             print(error)
             db.session.rollback()
             return None
+            
+    def update(self, user):
+        if "email" in user:
+            self.email = user['email']
+        if "phone_number" in user:
+            self.phone_number = user['phone_number']
+        if "full_name" in user:
+            self.full_name = user['full_name']
+        try:
+            db.session.commit()
+            return True
+        except Exception as error:
+            db.session.rollback()
+            return False    
            
 class UserOrder(db.Model): #TABLA DE TRABAJOS REALIZADOS
     id = db.Column(db.Integer, primary_key=True)

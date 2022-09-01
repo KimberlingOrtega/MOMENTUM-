@@ -1,8 +1,10 @@
+import { sweetNotification } from "../utils/sweetnotification";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       is_admin: null,
       token: null,
+      userData: null,
     },
     actions: {
       userLogin: async (data) => {
@@ -47,6 +49,55 @@ const getState = ({ getStore, getActions, setStore }) => {
           return true;
         }
         return false;
+      },
+      getUserData: async () => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/obtener-datos-usuario`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        if (response.ok) {
+          let body = await response.json();
+          setStore({ userData: body.result });
+          return true;
+        }
+        return false;
+      },
+      updateUserData: async (data) => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/actualizar-datos-usuario`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(data),
+          }
+        );
+        if (response.ok) {
+          sweetNotification("success", "Los datos han sido actualizados");
+          return true;
+        } else if (response.status == 500) {
+          sweetNotification(
+            "error",
+            "Ha ocurrido un error en el servidor. Intente más tarde."
+          );
+          return false;
+        }
+        return false;
+      },
+      persistData: () => {
+        let token = localStorage.getItem("token");
+        let is_admin = localStorage.getItem("is_admin");
+        console.log(token, is_admin);
+        setStore({ token: token });
+        setStore({ is_admin: is_admin });
       },
     },
   };
