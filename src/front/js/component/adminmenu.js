@@ -23,17 +23,17 @@ export const Adminmenu = ({ admin }) => {
         </button>
         <ul className="dropdown-menu">
           <li>
-            <Link className="dropdown-item" to="/datos">
+            <Link className="dropdown-item font-bold" to="/datos">
               Datos
             </Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="/clientes">
-              Clientes
+            <Link className="dropdown-item font-bold" to="/clientes">
+              Registro de cliente
             </Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="/admin">
+            <Link className="dropdown-item font-bold" to="/admin">
               Trabajos realizados
             </Link>
           </li>
@@ -41,7 +41,7 @@ export const Adminmenu = ({ admin }) => {
             <hr className="dropdown-divider" />
           </li>
           <li>
-            <Link className="dropdown-item" to="/" onClick={handleLogOut}>
+            <Link className="dropdown-item font-bold" to="/" onClick={handleLogOut}>
               Salir
             </Link>
           </li>

@@ -15,7 +15,7 @@ export const Admin = () => {
         <div className="w-3/4 mt-8">
           <div className="">
             <div className="flex justify-center principal-title text-black font-bold">Trabajos realizados</div>
-            <div className="flex items-center justify-center mt-8">
+            <div className="flex items-center justify-center mt-10">
               <div className="">
                 <input
                   className=""
@@ -56,10 +56,14 @@ export const Admin = () => {
                 ></input>
               </div>
 
-              <div className="ml-3 ">
-                <button className="p-2 bg-sky-500 hover:bg-sky-700 ...">
-                  Salvar
-                </button>
+              <div className="ml-3 flex items-center">
+              <button
+                        type="button"
+                        
+                        className="inline-flex items-center px-3 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+                      >
+                        Guardar
+                      </button>
               </div>
             </div>
             {/* LISTAR EN UN DIV AQUI LOS CLIENTES YA REGISTRADOS */}

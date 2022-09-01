@@ -24,24 +24,24 @@ export const Usermenu = ({ cliente }) => {
         </button>
         <ul className="dropdown-menu">
           <li>
-            <Link className="dropdown-item" to="/datos">
+            <Link className="dropdown-item font-bold" to="/datos">
               Datos
             </Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="/trabajos">
+            <Link className="dropdown-item font-bold" to="/trabajos">
               Trabajos realizados
             </Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="/cotizacion">
+            <Link className="dropdown-item font-bold" to="/cotizacion">
               Nueva cotización
             </Link>
           </li>
           <li>
             <hr className="dropdown-divider" />
           </li>
-          <Link className="dropdown-item" to="/" onClick={handleLogOut}>
+          <Link className="dropdown-item font-bold" to="/" onClick={handleLogOut}>
             Salir
           </Link>
         </ul>

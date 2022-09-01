@@ -117,7 +117,7 @@ export const Datos = () => {
               </div>
             </div>
           </div>
-          <div className=" mt-24">
+          <div className=" mt-16">
             <div className="flex flex-col items-center sm:justify-center sm:pt-0 ">
             <div className="flex justify-center principal-title text-black font-bold">Alterar contraseña</div>
               <div className="border border-4 border-gray-900 w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">

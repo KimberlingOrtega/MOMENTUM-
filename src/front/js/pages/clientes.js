@@ -12,15 +12,16 @@ export const Clientes = () => {
             src="https://img.freepik.com/foto-gratis/tiro-vertical-escala-grises-lente-camara-sobre-superficie-madera_181624-514.jpg?w=826&t=st=1661902397~exp=1661902997~hmac=4e2473f9adc1ead018298037fc1c81b92b95b7b1c7eaa1fba42a3b9b9f3febe2"
           />
         </div>
-        <div className="w-3/4 mt-24">
+        <div className="w-3/4 mt-8">
             <div>
-              <div className="flex flex-col items-center sm:justify-center sm:pt-0 ">
+            <div className="flex justify-center principal-title text-black font-bold">Registrar cliente</div>
+              <div className="flex flex-col items-center sm:justify-center sm:pt-0 mt-6">
                 <div className="border border-4 border-gray-900 w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
                   <form>
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Full name
                       </label>
@@ -35,7 +36,7 @@ export const Clientes = () => {
                     <div className="mt-4">
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Phone number
                       </label>
@@ -50,7 +51,7 @@ export const Clientes = () => {
                     <div className="mt-4">
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Email
                       </label>
@@ -65,7 +66,7 @@ export const Clientes = () => {
                     <div className="mt-4">
                       <label
                         htmlFor="password"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Password
                       </label>
@@ -80,7 +81,7 @@ export const Clientes = () => {
                     <div className="mt-4">
                       <label
                         htmlFor="password_confirmation"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Confirm Password
                       </label>
