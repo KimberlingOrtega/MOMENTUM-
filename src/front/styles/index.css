@@ -136,10 +136,69 @@ img {
   .column {
     flex: 100%;
   }
-
 }
 @media (max-width: 800px) {
   .column {
     flex: 50%;
+  }
 }
+
+/*Estilos para componente contacto*/
+
+:root {
+  --linkedin: #0077b5;
+  --facebook: #3b5999;
+  --instagram: #e4405f;
+  --twitter: #2b80ff;
+  --youtube: #ff0000;
+}
+
+.social-network {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-network ul li {
+  display: inline-block;
+  margin: 0 5px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.social-network ul li a {
+  display: block;
+  padding: 0 10px;
+  background: rgb(128, 126, 126);
+  color: white;
+  line-height: 40px;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px 0px rgba(0, 0green, 0blue, 0.2);
+  transition: 0.2s;
+}
+
+.social-network ul li a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 5px 0px rgba(0, 0green, 0blue, 0.4);
+}
+
+.social-network ul li .linkedin:hover {
+  background: var(--linkedin);
+}
+.social-network ul li .facebook:hover {
+  background: var(--facebook);
+}
+
+.social-network ul li .instagram:hover {
+  background: var(--instagram);
+}
+
+.social-network ul li .twitter:hover {
+  background: var(--twitter);
+}
+
+.social-network ul li .youtube:hover {
+  background: var(--youtube);
 }

@@ -8,7 +8,7 @@ export const Cotizacion = () => {
     <div className="px-0 pt-32">
       <Title titulo="Cotización" />
       <div className=" flex h-screen ">
-        <div className="grow bg-white-400 w-2/4 pt-4 ">
+        <div className="grow bg-white-400 w-2/4 pt-4 flex justify-center ">
           <Contacto />
         </div>
 
