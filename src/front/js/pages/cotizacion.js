@@ -3,6 +3,7 @@ import { Form } from "../component/form";
 import { Title } from "../component/title";
 import Places from "./places";
 import { Contacto } from "../component/contacto";
+
 export const Cotizacion = () => {
   return (
     <div className="px-0 pt-32">

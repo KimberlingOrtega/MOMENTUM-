@@ -34,7 +34,7 @@ export const Usermenu = ({ cliente }) => {
             </Link>
           </li>
           <li>
-            <Link className="dropdown-item font-bold" to="/cotizacion">
+            <Link className="dropdown-item font-bold" to="/nuevacotizacion">
               Nueva cotización
             </Link>
           </li>
