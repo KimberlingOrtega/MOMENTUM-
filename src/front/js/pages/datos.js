@@ -38,8 +38,9 @@ export const Datos = () => {
             src="https://img.freepik.com/foto-gratis/redactar-correo-electronico-dispositivo-digital_53876-132282.jpg?w=740&t=st=1661905822~exp=1661906422~hmac=d65cb5c5ab266e9d81d3df39862afe4cb10882aa5cbdb81e7c40bded0c0b829b"
           />
         </div>
-        <div className="w-3/4 mt-24">
+        <div className="w-3/4 mt-8">
           <div className=" ">
+          <div className="flex justify-center principal-title text-black font-bold">Datos</div>
             <div>
               <div className="flex flex-col items-center sm:justify-center sm:pt-0 ">
                 <div className="border border-4 border-gray-900 w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
@@ -47,9 +48,9 @@ export const Datos = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
-                        Full name
+                        Nombre completo
                       </label>
                       <div className="flex flex-col items-start">
                         <input
@@ -66,7 +67,7 @@ export const Datos = () => {
                     <div className="mt-4">
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Teléfono
                       </label>
@@ -86,7 +87,7 @@ export const Datos = () => {
                     <div className="mt-4">
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 undefined"
+                        className="block text-sm font-medium text-gray-700 undefined font-bold"
                       >
                         Email
                       </label>
@@ -108,7 +109,7 @@ export const Datos = () => {
                         onClick={handleUpdateData}
                         className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                       >
-                        Save
+                        Guardar
                       </button>
                     </div>
                   </form>
@@ -118,12 +119,13 @@ export const Datos = () => {
           </div>
           <div className=" mt-24">
             <div className="flex flex-col items-center sm:justify-center sm:pt-0 ">
+            <div className="flex justify-center principal-title text-black font-bold">Alterar contraseña</div>
               <div className="border border-4 border-gray-900 w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
                 <form>
                   <div className="">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-gray-700 undefined"
+                      className="block text-sm font-medium text-gray-700 undefined font-bold"
                     >
                       Password
                     </label>
@@ -138,7 +140,7 @@ export const Datos = () => {
                   <div className="mt-4">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-gray-700 undefined"
+                      className="block text-sm font-medium text-gray-700 undefined font-bold"
                     >
                       New Password
                     </label>
@@ -153,7 +155,7 @@ export const Datos = () => {
                   <div className="mt-4">
                     <label
                       htmlFor="password_confirmation"
-                      className="block text-sm font-medium text-gray-700 undefined"
+                      className="block text-sm font-medium text-gray-700 undefined font-bold"
                     >
                       Confirm New Password
                     </label>
@@ -170,7 +172,7 @@ export const Datos = () => {
                       type="button"
                       className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                     >
-                      Save
+                      Guardar
                     </button>
                   </div>
                 </form>
