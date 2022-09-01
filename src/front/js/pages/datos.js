@@ -1,12 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Title } from "../component/title";
 import { Context } from "../store/appContext";
+import { sweetNotification } from "../utils/sweetnotification";
 
 export const Datos = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [fullName, setFullName] = useState("");
+  const [currentPasword, setCurrentPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordTwo, setPasswordTwo] = useState("");
+  const [isEqual, setIsEqual] = useState(false);
 
   const getUserData = async () => {
     if (await actions.getUserData()) {
@@ -25,6 +30,27 @@ export const Datos = () => {
     if (await actions.updateUserData(data)) {
     }
   };
+
+  const handleChangePassword = async () => {
+    let data = {
+      current_password: currentPasword,
+      password: password,
+    };
+    if (password === passwordTwo) {
+      if (await actions.changePassword(data)) {
+        setCurrentPassword("");
+        setPassword("");
+        setPasswordTwo("");
+        return console.log("Cambiado");
+      }
+      return console.log("Ocurrio un error, no se pudo cambiar la contraseña.");
+    }
+    return sweetNotification(
+      "error",
+      "Las contraseñas no coinciden. Por favor intente de nuevo."
+    );
+  };
+
   useEffect(() => {
     getUserData();
   }, []);
@@ -133,6 +159,10 @@ export const Datos = () => {
                       <input
                         type="password"
                         name="password"
+                        onChange={(e) => {
+                          setCurrentPassword(e.target.value);
+                        }}
+                        value={currentPasword}
                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                       />
                     </div>
@@ -148,6 +178,10 @@ export const Datos = () => {
                       <input
                         type="password"
                         name="password"
+                        onChange={(e) => {
+                          setPassword(e.target.value);
+                        }}
+                        value={password}
                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                       />
                     </div>
@@ -163,6 +197,10 @@ export const Datos = () => {
                       <input
                         type="password"
                         name="password_confirmation"
+                        onChange={(e) => {
+                          setPasswordTwo(e.target.value);
+                        }}
+                        value={passwordTwo}
                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                       />
                     </div>
@@ -170,6 +208,7 @@ export const Datos = () => {
                   <div className="flex items-center justify-end mt-4">
                     <button
                       type="button"
+                      onClick={handleChangePassword}
                       className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                     >
                       Guardar

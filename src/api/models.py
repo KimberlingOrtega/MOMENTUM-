@@ -51,7 +51,18 @@ class User(db.Model):
         except Exception as error:
             db.session.rollback()
             return False    
-           
+    
+    def update_password(self, user):
+        if "password" in user:
+            self.password = user['password']
+        try:
+            db.session.commit()
+            return True
+        except Exception as error:
+            db.session.rollback()
+            return False
+    
+    
 class UserOrder(db.Model): #TABLA DE TRABAJOS REALIZADOS
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
