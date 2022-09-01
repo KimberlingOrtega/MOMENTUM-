@@ -28,7 +28,7 @@ def create_login():
     if check_password_hash(user.password, salt + password):
         access_token = create_access_token(identity=user.id)
         return jsonify({"access_token":access_token,"is_admin":user.is_admin})
-    return jsonify({"msg": "contraseña incorrecta"}), 401
+    return jsonify({"message": "contraseña incorrecta"}), 401
 
 #|REGISTRO DE USUARIO
 @api.route("/register", methods =['POST'])
@@ -40,8 +40,8 @@ def handle_register():
     body["password"] = generate_password_hash(salt+password)
     create_user = User.create(body)
     if create_user is not None:
-        return jsonify(create_user.serialize()),201
-    return jsonify({"message":"Usuario no creado"}),400    
+        return jsonify({"message":"Usuario creado correctamente"}),201
+    return jsonify({"message":"No se pudo crear el usuario, intente de nuevo"}),500    
 
 #REGISTRO DE NUEVAS COTIZACIONES
 @api.route("/cotizacion", methods =['POST'])
@@ -92,4 +92,25 @@ def actualizar_datos_usuario():
         if updated:
             return jsonify({"message": "Datos actualizados!"}), 200
         return jsonify({"message":"No se pudo actualizar los datos"}), 500
-    return jsonify({"message":"Usuario no encontrado"}),404        
+    return jsonify({"message":"Usuario no encontrado"}),404   
+    
+@api.route("/cambiar-contrasena", methods=['POST'])
+@jwt_required()
+def verificar_contrasena():
+    current_user = get_jwt_identity()
+    body = request.json
+    user = User.query.filter_by(id=current_user).one_or_none()
+    password = body["password"]
+    current_password = body["current_password"]
+    if user is not None:
+        salt = user.salt
+        body["password"] = generate_password_hash(salt+password)
+        if check_password_hash(user.password, salt + current_password):
+            updated = user.update_password(body)
+            if updated:
+                return jsonify({"message": "Contraseña actualizada."}), 200
+            return jsonify({"message":"Ha ocurrido un error en el servidor."}), 500
+        return jsonify({"message": "Contraseña incorrecta."}), 401
+    return jsonify({"message":"Usuario no encontrado."}),404     
+    
+    
