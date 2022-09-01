@@ -32,10 +32,10 @@ export const Moda = () => {
             className="icon"
             url="https://www.matteozanga.it/wp-content/uploads/2020/05/SIMAR-ITALIAN-STYLE.jpg.webp"
           />
-          <Foto
+          {/* <Foto
             className="icon"
             url="https://www.matteozanga.it/wp-content/uploads/2020/05/WARSAW-FASHION_4.jpg.webp"
-          />
+          /> */}
         </div>
         <div className="column ">
           <Foto
@@ -94,10 +94,10 @@ export const Moda = () => {
             className="icon"
             url="https://www.matteozanga.it/wp-content/uploads/2020/05/SIMAR-fashion.jpg.webp"
           />
-          <Foto
+          {/* <Foto
             className="icon"
             url="https://www.matteozanga.it/wp-content/uploads/2020/05/WARSAW-FASHION_3.jpg.webp"
-          />
+          /> */}
         </div>
       </div>
       <Modal />
