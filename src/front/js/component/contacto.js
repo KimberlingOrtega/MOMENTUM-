@@ -14,7 +14,7 @@ export const Contacto = () => {
           <i class="fa-solid fa-phone"></i> +39 347 148 9771
         </p>
         <p className="text-slate-500 font-bold text-2xl my-2 ml-6 pl-6">
-          <a href="https://ve.linkedin.com/" target="_blank">
+          <a href="https://outlook.live.com/owa/" target="_blank">
             <i class="fa-solid fa-envelope"></i> info@matteozanga.it
           </a>
         </p>
