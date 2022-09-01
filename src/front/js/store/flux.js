@@ -92,6 +92,51 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
         return false;
       },
+      changePassword: async (data) => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/cambiar-contrasena`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(data),
+          }
+        );
+        if (response.ok) {
+          let body = await response.json();
+          sweetNotification("success", body.message);
+          return true;
+        } else if (response.status == 500) {
+          let body = await response.json();
+          sweetNotification("error", body.message);
+          return false;
+        } else if (response.status == 401) {
+          let body = await response.json();
+          sweetNotification("error", body.message);
+          return false;
+        }
+        return false;
+      },
+      registerNewClient: async (data) => {
+        let response = await fetch(`${process.env.BACKEND_URL}/api/register`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        if (response.ok) {
+          let body = await response.json();
+          sweetNotification("success", body.message);
+          return true;
+        } else if (response.status == 500) {
+          let body = await response.json();
+          sweetNotification("error", body.message);
+          return false;
+        }
+      },
       persistData: () => {
         let token = localStorage.getItem("token");
         let is_admin = localStorage.getItem("is_admin");
