@@ -7,10 +7,10 @@ export const Corporativo = () => {
   return (
     <div className="px-0 pt-32 mx-auto ">
       <Title titulo="Corporativo" />
-      <Description title="Fotografía de comida" text="Me gusta ayudar a los emprendedores a potenciar sus empresas y sus productos .
+      <Description title="¡Muéstrale al mundo de lo que eres capaz!" text="Me gusta ayudar a los emprendedores a potenciar sus empresas y sus productos .
 Contar con fotografías de alta calidad significa comunicarse profesionalmente en un entorno cada día más competitivo.
 Trabajadores, maquinaria, etapas de producción, productos terminados:
-¡Muéstrale al mundo de lo que eres capaz!"/>
+Cada detalle cuenta!"/>
 
       <div className="row ">
         <div className="column ">
