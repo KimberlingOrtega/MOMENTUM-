@@ -14,7 +14,7 @@ export const Admin = () => {
         </div>
         <div className="w-3/4 mt-8">
           <div className="">
-            <div className="flex justify-center principal-title text-black">Clientes</div>
+            <div className="flex justify-center principal-title text-black font-bold">Trabajos realizados</div>
             <div className="flex items-center justify-center mt-8">
               <div className="">
                 <input
