@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 export const Adminmenu = ({ admin }) => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
+
   const handleLogOut = () => {
     if (actions.logOut()) {
       navigate("/");

@@ -14,7 +14,7 @@ export const Login = () => {
   };
   const handleLogin = async () => {
     if (await actions.userLogin(data)) {
-      let isAdmin = store.is_admin;
+      let isAdmin = localStorage.getItem("is_admin");
       console.log(isAdmin);
       if (isAdmin) {
         navigate("/admin");

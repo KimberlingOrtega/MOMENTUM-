@@ -17,14 +17,12 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="absolute right-0 flex items-center h-20 mx-4">
-        {store.token && store.token == null ? (
+        {store.token == null ? (
           <Login />
-        ) : store.is_admin == true ? (
+        ) : store.is_admin ? (
           <Adminmenu admin="Roberto De Freitas" />
-        ) : store.is_admin == false ? (
-          <Usermenu />
         ) : (
-          <Login />
+          <Usermenu />
         )}
         {/* {store.token && <Login />} */}
       </div>
