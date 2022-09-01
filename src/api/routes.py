@@ -70,3 +70,26 @@ def trabajos_realizados():
     if new_trabajos is not None:
         return jsonify(new_trabajos.serialize()),201
     return jsonify({"message":"trabajos no realizados"}),400
+    
+@api.route("/obtener-datos-usuario", methods =['GET'])
+@jwt_required()
+def obtener_dato():
+    current_user = get_jwt_identity()
+    user = User.query.filter_by(id = current_user).one_or_none()
+    if user is not None:
+        return jsonify({"result":user.serialize()}), 200
+    return jsonify({"message": "usuario no encontrado"}), 404    
+        # body = request.json
+
+@api.route("/actualizar-datos-usuario", methods=['POST'])
+@jwt_required()
+def actualizar_datos_usuario():
+    current_user = get_jwt_identity()
+    user = User.query.filter_by(id=current_user).one_or_none()
+    body = request.json
+    if user is not None:
+        updated = user.update(body)
+        if updated:
+            return jsonify({"message": "Datos actualizados!"}), 200
+        return jsonify({"message":"No se pudo actualizar los datos"}), 500
+    return jsonify({"message":"Usuario no encontrado"}),404        
