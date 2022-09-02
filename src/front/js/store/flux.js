@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       is_admin: null,
       token: null,
       userData: null,
+      allWorks: null,
     },
     actions: {
       userLogin: async (data) => {
@@ -18,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           let body = await response.json();
           localStorage.setItem("token", body.access_token);
-          localStorage.setItem("is_admin", body.is_admin);
+          localStorage.setItem("is_admin", JSON.stringify(body.is_admin));
           setStore({ token: body.access_token });
           setStore({ is_admin: body.is_admin });
           return true;
@@ -137,9 +138,41 @@ const getState = ({ getStore, getActions, setStore }) => {
           return false;
         }
       },
+      registerNewWork: async (data) => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/trabajos-realizados`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
+        if (response.ok) {
+          let body = await response.json();
+          sweetNotification("success", body.message);
+          return true;
+        } else if (response.status == 500) {
+          let body = await response.json();
+          sweetNotification("error", body.message);
+          return false;
+        }
+      },
+      getAllWorks: async () => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/trabajos-realizados`
+        );
+        if (response.ok) {
+          let body = await response.json();
+          setStore({ allWorks: body.results });
+          return true;
+        }
+        return false;
+      },
       persistData: () => {
         let token = localStorage.getItem("token");
-        let is_admin = localStorage.getItem("is_admin");
+        let is_admin = JSON.parse(localStorage.getItem("is_admin"));
         console.log(token, is_admin);
         setStore({ token: token });
         setStore({ is_admin: is_admin });
