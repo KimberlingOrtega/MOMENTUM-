@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Title } from "../component/title";
+import { Context } from "../store/appContext";
+import { sweetNotification } from "../utils/sweetnotification";
 
 export const Trabajos = () => {
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getMyRequestedWorks();
+  }, []);
   return (
     <div className="px-0 pt-32 ">
       {/* <Title titulo="Registro de clientes" /> */}
@@ -14,9 +20,21 @@ export const Trabajos = () => {
         </div>
         <div className="w-3/4 mt-8">
           <div className="">
-            <div className="flex justify-center principal-title text-black font-bold">Trabajos realizados</div>
+            <div className="flex justify-center principal-title text-black font-bold">
+              Trabajos realizados
+            </div>
             <div className="flex items-center justify-center mt-10">
-              
+              {store.myWorks &&
+                store.myWorks.map((work, index) => {
+                  return (
+                    <div key={index}>
+                      <p>Nombre: {work.full_name}</p>
+                      <p>Fecha: {work.date}</p>
+                      <p>Servicio: {work.service_name}</p>
+                      <p>Link: {work.work_link}</p>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
