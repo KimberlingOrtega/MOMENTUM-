@@ -87,6 +87,19 @@ def trabajos_realizados():
         return jsonify({"results": works_list}), 200
 
 
+@api.route("/trabajos-solicitados", methods=['GET'])
+@jwt_required()
+def trabajos_solicitados():
+    current_user = get_jwt_identity()
+    if request.method == "GET":
+        works = UserOrder.query.filter_by(user_id=current_user)
+        print(works)
+        works_list = []
+        for work in works:
+            works_list.append(work.serialize())
+        return jsonify({"results": works_list}), 200
+
+
 @api.route("/obtener-datos-usuario", methods=['GET'])
 @jwt_required()
 def obtener_dato():
