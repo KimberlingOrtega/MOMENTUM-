@@ -61,7 +61,18 @@ def quotation():
     return jsonify({"message": "cotizacion no creada"}), 400
 
 
+@api.route("/cotizaciones-solicitadas", methods=['GET'])
+def requested_quotations():
+    quotations = Cotizacion.query.all()
+    print(quotations)
+    quotations_list = []
+    for quotation in quotations:
+        quotations_list.append(quotation.serialize())
+    return jsonify({"results": quotations_list}), 200
+
 # REGISTRO DE TRABAJOS REALIZADOS
+
+
 @api.route("/trabajos-realizados", methods=['POST', 'GET'])
 def trabajos_realizados():
     if request.method == "POST":
