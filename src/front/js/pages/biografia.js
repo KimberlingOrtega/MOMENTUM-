@@ -15,7 +15,7 @@ export const Biografia = () => {
         title="¡Oye! Soy Sandra Sanchez "
         text="Soy de Río de Janeiro y… hablar de nosotros mismos nunca es una tarea fácil, ¿verdad? ¡Me gusta hablar de cosas de fotografía y de por qué existe hoy en día!
 
-Cuando comencé a ingresar al mercado de la fotografía me di cuenta de que es extremadamente confuso, difícil y aburrido aprender tanto de un día para otro y desentrañar todos los secretos por mí mismo. Y sabiendo que es tan complicado manejar todo solo es que hoy quiero transmitirte mis conocimientos y mis experiencias."
+Cuando comencé a ingresar al mercado de la fotografía me di cuenta de que es extremadamente confuso, difícil y aburrido aprender tanto de un día para otro y desentrañar todos los secretos por mí mismo."
       />
       <FotoTexto
         image="https://coisadefotografa.com/wp-content/uploads/2017/09/como-atrair-os-primeiros-clientes-na-fotografia-2-scaled.jpg"

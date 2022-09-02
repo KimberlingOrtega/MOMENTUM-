@@ -15,7 +15,7 @@ export const Contacto = () => {
         </p>
         <p className="text-black font-bold text-2xl my-2 ml-1 pl-">
           <a href="https://outlook.live.com/owa/" target="_blank">
-            <i className="fa-solid fa-envelope"></i> info@matteozanga.it
+            <i className="fa-solid fa-envelope"></i> info@sandrasanchez.es
           </a>
         </p>
       </div>
@@ -70,7 +70,7 @@ export const Contacto = () => {
       </div>
       <div>
         <p className="w-80 text-2xl text-black ml-2.5 mt-4 font-bold">
-          MATTEO ZANGA IMAGERY SAS Via Piave, 180 24020 Villa d’Ogna (BG) Italy
+          SANDRA SANCHEZ SAS Via Piave, 180 24020 Villa d’Ogna (BG) España
           P.IVA: 04552040166
         </p>
       </div>
