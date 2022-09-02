@@ -58,7 +58,7 @@ export const Admin = () => {
               <div>
                 <input
                   className="ml-3 rounded-md"
-                  type="text"
+                  type="date"
                   name="name"
                   onChange={(e) => {
                     let date = e.target.value;
