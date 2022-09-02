@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Title } from "../component/title";
+import { Context } from "../store/appContext";
+import { sweetNotification } from "../utils/sweetnotification";
 
 export const Admin = () => {
+  const { store, actions } = useContext(Context);
+  const [fullName, setFullName] = useState("");
+  const [workDate, setWorkDate] = useState("");
+  const [service, setService] = useState("");
+  const [link, setLink] = useState("");
+
+  const handleWorkRegistration = async () => {
+    let data = {
+      full_name: fullName,
+      date: workDate,
+      service_name: service,
+      work_link: link,
+    };
+    if (await actions.registerNewWork(data)) {
+      return console.log("Trabajo agregado");
+    }
+    return console.log("Trabajo NO agregado");
+  };
+  useEffect(() => {
+    actions.getAllWorks();
+  }, []);
   return (
     <div className="px-0 pt-32 ">
       {/* <Title titulo="Registro de clientes" /> */}
@@ -14,13 +37,19 @@ export const Admin = () => {
         </div>
         <div className="w-3/4 mt-8">
           <div className="">
-            <div className="flex justify-center principal-title text-black font-bold">Trabajos realizados</div>
+            <div className="flex justify-center principal-title text-black font-bold">
+              Trabajos realizados
+            </div>
             <div className="flex items-center justify-center mt-10">
               <div className="">
                 <input
                   className=""
                   type="text"
                   name="name"
+                  onChange={(e) => {
+                    setFullName(e.target.value);
+                  }}
+                  value={fullName}
                   required
                   placeholder="Full Name"
                 ></input>
@@ -29,8 +58,14 @@ export const Admin = () => {
               <div>
                 <input
                   className="ml-3"
-                  type="text"
+                  type="date"
                   name="name"
+                  onChange={(e) => {
+                    let date = e.target.value;
+                    const [year, month, day] = date.split("-");
+                    const convertedDate = `${day}/${month}/${year}`;
+                    setWorkDate(convertedDate);
+                  }}
                   required
                   placeholder="Fecha"
                 ></input>
@@ -41,6 +76,10 @@ export const Admin = () => {
                   className="ml-3"
                   type="text"
                   name="name"
+                  onChange={(e) => {
+                    setService(e.target.value);
+                  }}
+                  value={service}
                   required
                   placeholder="Servicio"
                 ></input>
@@ -51,22 +90,37 @@ export const Admin = () => {
                   className="ml-3"
                   type="text"
                   name="name"
+                  onChange={(e) => {
+                    setLink(e.target.value);
+                  }}
+                  value={link}
                   required
                   placeholder="Link"
                 ></input>
               </div>
 
               <div className="ml-3 flex items-center">
-              <button
-                        type="button"
-                        
-                        className="inline-flex items-center px-3 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
-                      >
-                        Guardar
-                      </button>
+                <button
+                  type="button"
+                  onClick={handleWorkRegistration}
+                  className="inline-flex items-center px-3 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+                >
+                  Guardar
+                </button>
               </div>
             </div>
             {/* LISTAR EN UN DIV AQUI LOS CLIENTES YA REGISTRADOS */}
+            {store.allWorks &&
+              store.allWorks.map((work, index) => {
+                return (
+                  <div key={index}>
+                    <p>Nombre: {work.full_name}</p>
+                    <p>Fecha: {work.date}</p>
+                    <p>Servicio: {work.service_name}</p>
+                    <p>Link: {work.work_link}</p>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
