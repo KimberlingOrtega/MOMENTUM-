@@ -4,18 +4,18 @@ import { Context } from "../store/appContext";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
+  let isAdmin = store.is_admin && store.is_admin;
   const [isShow, setIsShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  let data = {
-    email: email,
-    password: password,
-  };
+
   const handleLogin = async () => {
+    let data = {
+      email: email,
+      password: password,
+    };
     if (await actions.userLogin(data)) {
-      let isAdmin = localStorage.getItem("is_admin");
-      console.log(isAdmin);
       if (isAdmin) {
         navigate("/admin");
       } else {

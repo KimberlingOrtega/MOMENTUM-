@@ -8,7 +8,12 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
-
+  let token = localStorage.getItem("token");
+  let is_admin = JSON.parse(localStorage.getItem("is_admin"));
+  console.log(typeof is_admin);
+  useEffect(() => {
+    console.log(is_admin, "Line 15");
+  }, []);
   return (
     <div className="relative">
       <div className="shadow-md w-full fixed top-0 flex justify-center bg-white ">
@@ -17,14 +22,13 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="absolute right-0 flex items-center h-20 mx-4">
-        {store.token == null ? (
+        {store.token === null ? (
           <Login />
-        ) : store.is_admin ? (
-          <Adminmenu admin="Roberto De Freitas" />
+        ) : store.is_admin && store.is_admin == true ? (
+          <Adminmenu />
         ) : (
           <Usermenu />
         )}
-        {/* {store.token && <Login />} */}
       </div>
     </div>
   );
