@@ -23,6 +23,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ token: body.access_token });
           setStore({ is_admin: body.is_admin });
           return true;
+        } else if (response.status == 401) {
+          sweetNotification("error", "Correo y/o contraseña inválida");
+          return false;
         }
         return false;
       },
