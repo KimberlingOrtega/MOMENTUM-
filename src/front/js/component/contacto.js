@@ -10,10 +10,10 @@ export const Contacto = () => {
         Inmortaliza tus recuerdos
       </p>
       <div className="Contact h-1/6 my-5 pt-4">
-        <p className="text-black font-bold text-2xl mt-3 ml-6 pl-6">
+        <p className="text-black font-bold text-2xl mt-3 ml-1 pl-">
           <i class="fa-solid fa-phone"></i> +39 347 148 9771
         </p>
-        <p className="text-black font-bold text-2xl my-2 ml-6 pl-6">
+        <p className="text-black font-bold text-2xl my-2 ml-1 pl-">
           <a href="https://outlook.live.com/owa/" target="_blank">
             <i class="fa-solid fa-envelope"></i> info@matteozanga.it
           </a>
@@ -68,11 +68,11 @@ export const Contacto = () => {
           </li>
         </ul>
       </div>
-      <div className="text-black font-bold text-2xl px-7 mt-4">
-      <p>MATTEO ZANGA IMAGERY SAS
-          Via Piave, 180
-          24020 Villa d'Ogna (BG)
-          Número de IVA de Italia: 04552040166</p>
+      <div>
+        <p className="w-80 text-2xl text-black ml-2.5 mt-4 font-bold">
+          MATTEO ZANGA IMAGERY SAS Via Piave, 180 24020 Villa d’Ogna (BG) Italy
+          P.IVA: 04552040166
+        </p>
       </div>
     </div>
   );
