@@ -11,11 +11,11 @@ export const Contacto = () => {
       </p>
       <div className="Contact h-1/6 my-5 pt-4">
         <p className="text-black font-bold text-2xl mt-3 ml-1 pl-">
-          <i class="fa-solid fa-phone"></i> +39 347 148 9771
+          <i className="fa-solid fa-phone"></i> +39 347 148 9771
         </p>
         <p className="text-black font-bold text-2xl my-2 ml-1 pl-">
           <a href="https://outlook.live.com/owa/" target="_blank">
-            <i class="fa-solid fa-envelope"></i> info@sandrasanchez.es
+            <i className="fa-solid fa-envelope"></i> info@sandrasanchez.es
           </a>
         </p>
       </div>
@@ -45,7 +45,7 @@ export const Contacto = () => {
               target="_blank"
               className="instagram"
             >
-              <i class="fab fa-instagram"></i>
+              <i className="fab fa-instagram"></i>
             </a>
           </li>
           <li>
