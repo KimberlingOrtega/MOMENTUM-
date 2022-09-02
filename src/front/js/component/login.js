@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
-  let isAdmin = store.is_admin && store.is_admin;
+
   const [isShow, setIsShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +16,8 @@ export const Login = () => {
       password: password,
     };
     if (await actions.userLogin(data)) {
-      if (isAdmin) {
+      let is_admin = store.is_admin && store.is_admin;
+      if (is_admin) {
         navigate("/admin");
       } else {
         navigate("/");
@@ -111,7 +112,7 @@ export const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                
+
                 <button
                   type="button"
                   onClick={handleLogin}
