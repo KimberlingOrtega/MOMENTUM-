@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       token: null,
       userData: null,
       allWorks: null,
+      myWorks: null,
     },
     actions: {
       userLogin: async (data) => {
@@ -169,6 +170,23 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           let body = await response.json();
           setStore({ allWorks: body.results });
+          return true;
+        }
+        return false;
+      },
+      getMyRequestedWorks: async () => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/trabajos-solicitados`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        if (response.ok) {
+          let body = await response.json();
+          setStore({ myWorks: body.results });
           return true;
         }
         return false;
