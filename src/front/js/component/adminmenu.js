@@ -38,10 +38,22 @@ export const Adminmenu = ({ admin }) => {
             </Link>
           </li>
           <li>
+            <Link
+              className="dropdown-item font-bold"
+              to="/cotizaciones-solicitadas"
+            >
+              Cotizaciones
+            </Link>
+          </li>
+          <li>
             <hr className="dropdown-divider" />
           </li>
           <li>
-            <Link className="dropdown-item font-bold" to="/" onClick={handleLogOut}>
+            <Link
+              className="dropdown-item font-bold"
+              to="/"
+              onClick={handleLogOut}
+            >
               Salir
             </Link>
           </li>
