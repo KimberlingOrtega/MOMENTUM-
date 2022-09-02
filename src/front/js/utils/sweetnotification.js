@@ -5,6 +5,6 @@ export const sweetNotification = (icon, title) => {
     icon: icon,
     title: title,
     showConfirmButton: false,
-    timer: 1500,
+    timer: 3000,
   });
 };
