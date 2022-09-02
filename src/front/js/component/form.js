@@ -52,7 +52,7 @@ export const Form = () => {
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            className="font-semibold appearance-none block w-full bg-gray-200 text-black border border-red-500 rounded-md py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-first-name"
             type="text"
             placeholder="Nombre completo"
@@ -78,7 +78,7 @@ export const Form = () => {
         </div>
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            className="font-semibold appearance-none block w-full bg-gray-200 text-black border border-red-500 rounded-md py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-first-name"
             type="text"
             placeholder="E-mail"
@@ -90,7 +90,7 @@ export const Form = () => {
         </div>
         <div className="w-full md:w-1/2 px-3">
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="font-semibold appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-last-name"
             type="text"
             placeholder="Telefono"
@@ -106,30 +106,31 @@ export const Form = () => {
         <div className="w-full px-3 mb-4 md:mb-0">
           <div className="relative">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
               htlmfor="grid-state"
             >
               Selecciona un servicio.
             </label>
             <select
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="font-semibold block appearance-none w-full bg-gray-200 border border-gray-200 text-black py-3 px-4 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
               onChange={(e) => {
                 setService(e.target.options[e.target.selectedIndex].text);
               }}
               value={service}
             >
-              <option>Boda</option>
-              <option>Eventos</option>
-              <option>Cocina</option>
-              <option>Corporativo</option>
-              <option>Moda</option>
+              <option className="font-semibold">Boda</option>
+              <option className="font-semibold">Eventos</option>
+              <option className="font-semibold">Cocina</option>
+              <option className="font-semibold">Corporativo</option>
+              <option className="font-semibold">Moda</option>
             </select>
           </div>
         </div>
         <div className="w-full px-3 mb-6 md:mb-0">
           <textarea
             className="
+            
 form-control
 block
 w-full
@@ -137,14 +138,15 @@ px-3
 py-1.5
 text-base
 font-normal
-text-gray-700
+text-black
 bg-white bg-clip-padding
 border border-solid border-gray-300
-rounded
+rounded-md
 transition
 ease-in-out
 m-0
 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+font-semibold
 "
             id="exampleFormControlTextarea1"
             rows="3"
@@ -161,16 +163,17 @@ focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
           type="button"
           className="px-6
       py-2.5
-      bg-blue-600
+      bg-black
       text-white
       font-medium
       text-xs
       leading-tight
       uppercase
-      rounded
+      rounded-md
       shadow-md
       h-10
-      flex justify-center"
+      flex justify-center
+      font-bold"
           data-bs-toggle="modal"
           data-bs-target="#exampleModalLg"
           onClick={handleRequestQuotation}
@@ -232,7 +235,7 @@ const PlacesAutocomplete = ({
         value={value}
         onChange={(e) => setValue(e.target.value)}
         disabled={!ready}
-        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        className="font-semibold appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         placeholder="Buscar una dirección"
       />
       <ComboboxPopover>

@@ -13,13 +13,14 @@ export const Cotizacion = () => {
           <Contacto />
         </div>
 
-        <div className="grow bg-slate-400 w-2/4 pt-4 ">
-          <p className="pt-4 text-title text-3xl flex justify-center items-center  w-6/12 mx-auto  mb-2 text-slate-500 font-bold">
+        <div className="grow bg-gray-100 w-2/4 pt-4 ">
+        <div className="flex justify-center text-5xl text-black font-bold mt-3 mb-4">Realizar cotización</div>
+          {/* <p className="pt-4 text-title text-3xl flex justify-center items-center  w-6/12 mx-auto  mb-2 text-slate-500 font-bold">
             Realizar cotización
           </p>
           <p className="text-title text-xl flex justify-center items-center w-10/12 mx-auto text-teal-600 font-semibold  px-16 mt-3 mb-3">
             
-          </p>
+          </p> */}
           <hr className="hr-line mb-4" />
           <div className="px-10">
             <Form />

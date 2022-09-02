@@ -18,7 +18,7 @@ export const Admin = () => {
             <div className="flex items-center justify-center mt-10">
               <div className="">
                 <input
-                  className=""
+                  className="rounded-md"
                   type="text"
                   name="name"
                   required
@@ -28,7 +28,7 @@ export const Admin = () => {
 
               <div>
                 <input
-                  className="ml-3"
+                  className="ml-3 rounded-md"
                   type="text"
                   name="name"
                   required
@@ -38,7 +38,7 @@ export const Admin = () => {
 
               <div>
                 <input
-                  className="ml-3"
+                  className="ml-3 rounded-md"
                   type="text"
                   name="name"
                   required
@@ -48,7 +48,7 @@ export const Admin = () => {
 
               <div>
                 <input
-                  className="ml-3"
+                  className="ml-3 rounded-md"
                   type="text"
                   name="name"
                   required
@@ -60,7 +60,7 @@ export const Admin = () => {
               <button
                         type="button"
                         
-                        className="inline-flex items-center px-3 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+                        className="rounded-md inline-flex items-center px-3 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
                       >
                         Guardar
                       </button>
