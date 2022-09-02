@@ -19,10 +19,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         if (response.ok) {
           let body = await response.json();
-          localStorage.setItem("token", body.access_token);
-          localStorage.setItem("is_admin", JSON.stringify(body.is_admin));
           setStore({ token: body.access_token });
           setStore({ is_admin: body.is_admin });
+          localStorage.setItem("token", body.access_token);
+          localStorage.setItem("is_admin", JSON.stringify(body.is_admin));
           return true;
         } else if (response.status == 401) {
           sweetNotification("error", "Correo y/o contraseña inválida");
@@ -187,6 +187,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           let body = await response.json();
           setStore({ myWorks: body.results });
+          return true;
+        }
+        return false;
+      },
+      getAllQuotatios: async () => {
+        let response = await fetch(
+          `${process.env.BACKEND_URL}/api/cotizaciones-solicitadas`
+        );
+        if (response.ok) {
+          let body = await response.json();
+          setStore({ allQuotations: body.results });
           return true;
         }
         return false;
