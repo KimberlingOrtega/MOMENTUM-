@@ -18,7 +18,7 @@ JUNTOS ENCONTRAREMOS LA SOLUCIÓN ADECUADA.
         type="button"
         className="px-6
       py-2.5
-      bg-blue-600
+      bg-black
       text-white
       font-medium
       text-xs
@@ -27,7 +27,8 @@ JUNTOS ENCONTRAREMOS LA SOLUCIÓN ADECUADA.
       rounded
       shadow-md
       h-10
-      flex justify-center"
+      flex justify-center
+      font-bold"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalLg"
       >

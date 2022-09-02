@@ -16,38 +16,7 @@
   background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/Matteo-Zanga-Fotografo.jpg.webp);
 }
 /*Imgenes de fondo de la galaria de imagenes */
-.img-photo {
-  background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografie-commerciali.jpg.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.dos {
-  background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-moda.jpg.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.tres {
-  background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-food.jpg.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.cuatro {
-  background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografie-spedizioni.jpg.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.cinco {
-  background-image: url(https://www.matteozanga.it/wp-content/uploads/2020/04/fotografo-matrimoni.jpg.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .title-photo {
   display: flex;
   justify-content: center;
@@ -100,7 +69,8 @@
 }
 
 .titlecomponent {
-  background-color: #4f6597;
+  /* background-color: #4f6597; */
+  background-color: black;
 }
 /*Estilos para el Componente FotoGallery*/
 * {
@@ -170,7 +140,7 @@ img {
 .social-network ul li a {
   display: block;
   padding: 0 10px;
-  background: rgb(128, 126, 126);
+  background: black;
   color: white;
   line-height: 45px;
   font-size: 18px;

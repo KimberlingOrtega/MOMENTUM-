@@ -8,7 +8,7 @@ export const Comida = () => {
   return (
     <div className="px-0 pt-32 mx-auto ">
       <Title titulo="Comida" />
-      <Description title="Fotografía de comida" text="La comida es una de las grandes alegrías de la vida, y me encanta ayudar a los restauradores y productores a mostrar y realzar sus obras de arte.
+      <Description title="Alimentos, Bebidas, Bodegones... lo bueno para ser fotografiado." text="La comida es una de las grandes alegrías de la vida, y me encanta ayudar a los restauradores y productores a mostrar y realzar sus obras de arte.
 Si quieres comer con los ojos estos deliciosos platos, ¡entonces habré tenido éxito en mi intento!"/>
 
       <div className="row ">
